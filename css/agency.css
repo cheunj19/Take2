@@ -39,11 +39,6 @@ section {
     text-transform: none;
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
-p {
-    border: 2px solid red;
-    border-radius: 5px;
-}
-
 @media (min-width: 768px) {
   section {
     padding: 150px 0; } }
