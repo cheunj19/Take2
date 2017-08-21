@@ -13,7 +13,7 @@
     <script src= "agency.js"></script>
     <meta name="google-signin-client_id" content="150233025343-qlv2ccv0db1o6907b5d4tk4l1i5tnkat.apps.googleusercontent.com">
 
-    <title>S.U.A.T.I</title>
+    <title>Take Initiative</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,8 +34,8 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="#page-top">S.U.A.T.I</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#page-top">Take Initiative</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fa fa-bars"></i>
       </button>
@@ -54,7 +54,7 @@
             <a class="nav-link" href="#team">Our Team</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="log.html">Sign In/Sign Up</a>
+            <a class="nav-link" href="#signin">Sign In/Sign Up</a>
           </li>
         </ul>
       </div>
@@ -254,7 +254,7 @@
     </section>
 
 <!-- Search by Location -->
-    <section id = 'contact'>
+    <section id="contact">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -263,535 +263,423 @@
             <br>
           </div>
         </div>
-        <div class='sidebar' style = 'margin: 0px'>
-          <div id='listings' class='listings'></div>
-          </div>
-        <div id='map' style='height: 500px' class='map pad2'></div>
-
-        <script>
-        // This will let you use the .remove() function later on
-          if (!('remove' in Element.prototype)) {
-            Element.prototype.remove = function() {
-              if (this.parentNode) {
-                this.parentNode.removeChild(this);
-              }
-            };
-          };
-          mapboxgl.accessToken = 'pk.eyJ1IjoiZXhhbXBsZXMiLCJhIjoiY2lqbmpqazdlMDBsdnRva284cWd3bm11byJ9.V6Hg2oYJwMAxeoR9GEzkAA';
-          var bounds = [
-             [-74.457092, 40.490826], // Southwest coordinates
-             [-73.506775, 40.952937]  // Northeast coordinates
-           ];
-
-
-          // This adds the map to your page
-          var map = new mapboxgl.Map({
-            // container id specified in the HTML
-            container: 'map',
-            // style URL
-            style: 'mapbox://styles/mapbox/streets-v9',
-            // initial position in [long, lat] format
-            center: [-73.9978, 40.7209],
-            zoom: 13,
-            maxBounds: bounds, // Sets bounds as max
-            scrollZoom: false
-          });
-
-          var stores = {
-            "type": "FeatureCollection",
-                       "features": [{
-                           "type": "Feature",
-                           "properties": {
-                              "title": "Manhattan Animal Care Center",
-                               "description": "<p>326 East 110th Street New York, NY 10029</p><p><a href=\"http://www.nycacc.org/Volunteer.htm\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
-                               "icon": "star"
-                           },
-                           "geometry": {
-                               "type": "Point",
-                               "coordinates": [-73.93944599999998, 40.79245399999999]
-                           }
-                       }, {
-                           "type": "Feature",
-                           "properties": {
-                              "title": "Brooklyn Animal Care Center",
-                               "description": "<p>2336 Linden Boulevard Brooklyn, NY 11208</p><p><a href=\"http://www.nycacc.org/Volunteer.htm\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
-                               "icon": "star"
-                           },
-                           "geometry": {
-                               "type": "Point",
-                               "coordinates": [-73.87650510000003, 40.6638009]
-                           }
-                       }, {
-                           "type": "Feature",
-                           "properties": {
-                              "title": "Staten Island Animal Care Center",
-                               "description": "<p>3139 Veterans Road West Staten Island, NY 10309</p><p><a href=\"http://www.nycacc.org/Volunteer.htm\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
-                               "icon": "star"
-                           },
-                           "geometry": {
-                               "type": "Point",
-                               "coordinates": [-74.2379459, 40.527916]
-                           }
-                         }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "ASPCA Adoption Center",
-                                   "description": "<p>424 E 92nd St, New York, NY 10128</p><p><a href=\"https://www.aspca.org/take-action/volunteer/volunteer-aspca-adoption-center\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.94572499999998, 40.7801062]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "Visiting Nurse Service of New York",
-                                   "description": "<p>1150 South Ave # 302, Staten Island, NY 10314</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-74.17775289999997, 40.6119832]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "Visiting Nurse Service of New York",
-                                   "description": "<p>7520 Astoria Blvd, East Elmhurst, NY 11370</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.89315069999998, 40.7645332]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "Visiting Nurse Service of New York",
-                                   "description": "<p>1630 E 15th St, Brooklyn, NY 11229</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.95843239999999, 40.6094476]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "Visiting Nurse Service of New York",
-                                   "description": "<p>1250 Broadway, New York, NY 100019</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.98796270000003, 40.7478473]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "Visiting Nurse Service of New York",
-                                   "description": "<p>400 Lake Ave, Staten Island, NY 10303</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-74.15207420000002, 40.6260456]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "Visiting Nurse Service of New York",
-                                   "description": "<p>13226 Avery Ave, Flushing, NY 11355</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.83146390000002, 40.7524574]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "Isabella",
-                                   "description": "<p>515 Audubon Avenue, New York, NY 10040</p><p><a href=\"http://www.isabella.org/Isabella/Help\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.92753429999999, 40.8545202]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                 "title": "Visiting Neighbors",
-                                   "description": "<p>3 Washington Square Village #1, New York, NY 10012</p><p><a href=\"http://www.visitingneighbors.org/Activities-for-Seniors-New-York-City-NY.html\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.99797160000003, 40.7278058]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "New York Presbyterian Brooklyn Methodist Hospital",
-                                   "description": "<p>506 6th St Brooklyn NY 11215</p><p><a href=\"http://www.nyp.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.97941759999998, 40.6679815]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "New York Presbyterian / Columbia University Hospital",
-                                   "description": "<p>622 West 168th Street New York NY 10032</p><p><a href=\"http://www.nyp.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.9407372, 40.8411547]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "New York Presbyterian Allen Hospital",
-                                   "description": "<p>5141 Broadway New York NY 10034</p><p><a href=\"http://www.nyp.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.91296740000001, 40.87326789999999]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "New York Presbyterian Queens",
-                                   "description": "<p>56-45 Main Street Flushing NY 11355</p><p><a href=\"http://www.nyp.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.82514309999999, 40.7471206]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "NYU Langone Hospital - Brooklyn",
-                                   "description": "<p>150 55th Street Brooklyn, NY 11220</p><p><a href=\"http://nyulangone.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-74.02153709999999, 40.64675809999999]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "NYU Langone Hospital Orthopedic Hospital",
-                                   "description": "<p>301 East 17th Street New York, NY 10003</p><p><a href=\"http://nyulangone.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.98321349999998, 40.7342366]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "Memorial Sloan Kettering Bergen",
-                                   "description": "<p>225 Summit Ave, Montvale, NJ 07645</p><p><a href=\"https://www.mskcc.org/about/get-involved/volunteering\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-74.071437, 41.05736]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "Memorial Sloan Kettering 55th Street Imaging Center",
-                                   "description": "<p>300 E 56th St, New York, NY 10022</p><p><a href=\"https://www.mskcc.org/about/get-involved/volunteering\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.96530229999996, 40.75815269999999]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "Jersey City Medical Center",
-                                   "description": "<p>355 Grand St, Jersey City, NJ 07302</p><p><a href=\"http://www.barnabashealth.org/Jersey-City-Medical-Center/Volunteer.aspx\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-74.05026570000001, 40.7163312]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                  "title": "St. Mary's Church Clothing Drive",
-                                   "description": "<p>230 Classon Ave, Brooklyn, NY 11205</p><p><a href=\"http://www.stmarysclothingdrive.org/index.php?r=site%2Fpickup\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Donation</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.9611064, 40.6926353]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "The Bowery Mission",
-                                   "description": "<p>227 Bowery, New York, NY 10002</p><p><a href=\"https://www.bowery.org/donate/donate-goods/donate-clothes/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Donation</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.99283500000001, 40.72196700000001]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "New York Cares",
-                                   "description": "<p>65 Broadway, New York, NY 10006</p><p><a href=\"https://www.newyorkcares.org/projects/volunteer-homeless-shelter\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Homeless Shelter</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-74.0126, 40.7073]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "Hoboken Homeless Shelter",
-                                   "description": "<p>300 Bloomfield St, Hoboken, NJ 07030</p><p><a href=\"http://hobokenshelter.org/volunteers\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Homeless Shelter</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-74.0311, 40.7403]
-                               }
-                           }, {
-                               "type": "Feature",
-                               "properties": {
-                                   "title": "Long Island Cares",
-                                   "description": "<p>10 Davids Dr, Hauppauge, NY 11788</p><p><a href=\"https://www.licares.org/make-a-difference/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Homeless Shelter</p>",
-                                   "icon": "star"
-                               },
-                               "geometry": {
-                                   "type": "Point",
-                                   "coordinates": [-73.2572, 40.8194]
-                               }
-                         }, {
-                             "type": "Feature",
-                             "properties": {
-                                 "title": "Homeless Solutions",
-                                 "description": "<p>540 W Hanover Ave, Morristown, NJ 07960</p><p><a href=\"https://www.homelesssolutions.org/how-you-can-help/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Homeless Shelter</p>",
-                                 "icon": "star"
-                             },
-                             "geometry": {
-                                 "type": "Point",
-                                 "coordinates": [-74.5212, 40.8313]
-                             }
-                         }, {
-                             "type": "Feature",
-                             "properties": {
-                                 "title": "Upper East Side Donor Center",
-                                 "description": "<p>310 East 67th Street New York, NY 10065</p><p><a href=\"http://nybloodcenter.org/donate-blood/where-to-donate-today\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Blood Donation!</p>",
-                                 "icon": "star"
-                             },
-                             "geometry": {
-                                 "type": "Point",
-                                 "coordinates": [-74.2379459, 40.527916]
-                             }
-                         }, {
-                             "type": "Feature",
-                             "properties": {
-                                 "title": "Grand Central Donor Center",
-                                 "description": "<p>200 Park Avenue New York, NY 10017</p><p><a href=\"http://nybloodcenter.org/donate-blood/where-to-donate-today\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Blood Donation!</p>",
-                                 "icon": "star"
-                             },
-                             "geometry": {
-                                 "type": "Point",
-                                 "coordinates": [-73.9778, 40.7524]
-                             }
-                       }, {
-                           "type": "Feature",
-                           "properties": {
-                               "title": "Port Authority Donor Center",
-                               "description": "<p>625 Eighth Avenue New York, NY 10018</p><p><a href=\"http://nybloodcenter.org/donate-blood/where-to-donate-today\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Blood Donation!</p>",
-                               "icon": "star"
-                           },
-                           "geometry": {
-                               "type": "Point",
-                               "coordinates": [-73.9905, 40.7569]
-                           }
-                     }, {
-                         "type": "Feature",
-                         "properties": {
-                             "title": "NYPD Manhattan North 24th Precint",
-                             "description": "<p>151 West 100th Street New York, NY 10025</p><p><a href=\"http://nybloodcenter.org/donate-blood/where-to-donate-today\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Blood Donation!</p>",
-                             "icon": "star"
-                         },
-                         "geometry": {
-                             "type": "Point",
-                             "coordinates": [-73.9671, 40.7965]
-                         }
-                       }, {
-                           "type": "Feature",
-                           "properties": {
-                               "title": "NYC Parks",
-                               "description": "<p>24 W 61st St, New York, NY 10023</p><p><a href=\"https://www.nycgovparks.org/opportunities/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Parks and Rec</p>",
-                               "icon": "star"
-                           },
-                           "geometry": {
-                               "type": "Point",
-                               "coordinates": [-73.9828, 40.7698]
-                           }
-                       }, {
-                           "type": "Feature",
-                           "properties": {
-                               "title": "The Whitney",
-                               "description": "<p>99 Gansevoort St, New York, NY 10014</p><p><a href=\"http://whitney.org/About/Volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Parks and Rec</p>",
-                               "icon": "star"
-                           },
-                           "geometry": {
-                               "type": "Point",
-                               "coordinates": [-74.0088, 40.7820]
-                           }
-                       }, {
-                           "type": "Feature",
-                           "properties": {
-                               "title": "American Museum Of Natural History",
-                               "description": "<p>Central Park West & 79th St, New York, NY 10024</p><p><a href=\"http://www.amnh.org/join-support/volunteer-now\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Parks and Rec</p>",
-                               "icon": "star"
-                           },
-                           "geometry": {
-                               "type": "Point",
-                               "coordinates": [-73.9717, 40.7820]
-                           }
-                       }]
-                   };
-
-
-        map.on('load', function(e) {
-         // Add the data to your map as a layer
-          map.addLayer({
-             id: 'locations',
-             type: 'symbol',
-             // Add a GeoJSON source containing place coordinates and information.
-             source: {
-               type: 'geojson',
-               data: stores
-             },
-             layout: {
-               'icon-image': 'nz-state-2',
-               'icon-allow-overlap': true,
-             }
-           });
-           buildLocationList(stores);
-          });
-
-
-        function flyToStore(currentFeature) {
-          map.flyTo({
-             center: currentFeature.geometry.coordinates,
-             zoom: 15
-           });
-        }
-
-
-        function createPopUp(currentFeature) {
-        var popUps = document.getElementsByClassName('mapboxgl-popup');
-        // Check if there is already a popup on the map and if so, remove it
-        if (popUps[0]) popUps[0].remove();
-
-        var popup = new mapboxgl.Popup({ closeOnClick: false })
-          .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML('<h3>' + currentFeature.properties.title + '</h3>' +
-            '<h4>' + currentFeature.properties.description + '</h4>')
-          .addTo(map);
-        }
-
-
-        function buildLocationList(data) {
-            // Iterate through the list of stores
-            for (i = 0; i < data.features.length; i++) {
-              var currentFeature = data.features[i];
-              // Shorten data.feature.properties to just `prop` so we're not
-              // writing this long form over and over again.
-              var prop = currentFeature.properties;
-              // Select the listing container in the HTML and append a div
-              // with the class 'item' for each store
-              var listings = document.getElementById('listings');
-              var listing = listings.appendChild(document.createElement('div'));
-              listing.className = 'item';
-              listing.id = 'listing-' + i;
-
-              // Create a new link with the class 'title' for each store
-              // and fill it with the store address
-              var link = listing.appendChild(document.createElement('a'));
-              link.className = 'title';
-              link.dataPosition = i;
-              link.innerHTML = prop.title;
-
-              // Create a new div with the class 'details' for each store
-              // and fill it with the city and phone number
-              var details = listing.appendChild(document.createElement('div'));
-              details.innerHTML = prop.description;
-
-              // Add an event listener for the links in the sidebar listing
-              link.addEventListener('click', function(e) {
-                // Update the currentFeature to the store associated with the clicked link
-                var clickedListing = data.features[this.dataPosition];
-                // 1. Fly to the point associated with the clicked link
-                flyToStore(clickedListing);
-                // 2. Close all other popups and display popup for clicked store
-                createPopUp(clickedListing);
-                // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-                var activeItem = document.getElementsByClassName('active');
-                if (activeItem[0]) {
-                  activeItem[0].classList.remove('active');
-                }
-                this.parentNode.classList.add('active');
-              });
-            }
+      <style>
+          .mapboxgl-popup {
+              font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
           }
+      </style>
+      <div id='map' style='margin-left: 0vw; margin-right: 0vw; height: 500px;'></div>
+      <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiY25vcmRlbiIsImEiOiJjajZmMWRpYTgyaWp1MnhyMHU4bmRlZ2VnIn0.78UnxmlKS-YFmPE7BfgQFA';
+      var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v10'
+      });
 
-          // Add an event listener for when a user clicks on the map
-          map.on('click', function(e) {
-            // Query all the rendered points in the view
-            var features = map.queryRenderedFeatures(e.point, { layers: ['locations'] });
-            if (features.length) {
-              var clickedPoint = features[0];
-              // 1. Fly to the point
-              flyToStore(clickedPoint);
-              // 2. Close all other popups and display popup for clicked store
-              createPopUp(clickedPoint);
-              // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-              var activeItem = document.getElementsByClassName('active');
-              if (activeItem[0]) {
-                activeItem[0].classList.remove('active');
-              }
-              // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
-              var selectedFeature = clickedPoint.properties.title;
+      // Set bounds to New York, New York
+      var bounds = [
+        [-74.457092, 40.490826], // Southwest coordinates
+        [-73.506775, 40.952937]  // Northeast coordinates
+      ];
 
-              for (var i = 0; i < stores.features.length; i++) {
-                if (stores.features[i].properties.title === selectedFeature) {
-                  selectedFeatureIndex = i;
-                }
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-73.9978, 40.7209],
+        zoom: 0,
+        maxBounds: bounds // Sets bounds as max
+      });
+
+
+      map.on('load', function () {
+          // Add a layer showing the places.
+          map.addLayer({
+              "id": "places",
+              "type": "symbol",
+              "source": {
+                  "type": "geojson",
+                  "data": {
+                      "type": "FeatureCollection",
+                      "features": [{
+                          "type": "Feature",
+                          "properties": {
+                              "description": "<strong>Manhattan Animal Care Center</strong><p>326 East 110th Street New York, NY 10029</p><p><a href=\"http://www.nycacc.org/Volunteer.htm\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
+                              "icon": "star"
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-73.93944599999998, 40.79245399999999]
+                          }
+                      }, {
+                          "type": "Feature",
+                          "properties": {
+                              "description": "<strong>Brooklyn Animal Care Center</strong><p>2336 Linden Boulevard Brooklyn, NY 11208</p><p><a href=\"http://www.nycacc.org/Volunteer.htm\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
+                              "icon": "star"
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-73.87650510000003, 40.6638009]
+                          }
+                      }, {
+                          "type": "Feature",
+                          "properties": {
+                              "description": "<strong>Staten Island Animal Care Center</strong><p>3139 Veterans Road West Staten Island, NY 10309</p><p><a href=\"http://www.nycacc.org/Volunteer.htm\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
+                              "icon": "star"
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-74.2379459, 40.527916]
+                          }
+                        }, {
+                            "type": "Feature",
+                            "properties": {
+                                "description": "<strong>Staten Island Animal Care Center</strong><p>3139 Veterans Road West Staten Island, NY 10309</p><p><a href=\"http://www.nycacc.org/Volunteer.htm\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
+                                "icon": "star"
+                            },
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-74.2379459, 40.527916]
+                            }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>ASPCA Adoption Center</strong><p>424 E 92nd St, New York, NY 10128</p><p><a href=\"https://www.aspca.org/take-action/volunteer/volunteer-aspca-adoption-center\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Animal Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.94572499999998, 40.7801062]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Visiting Nurse Service of New York</strong><p>1150 South Ave # 302, Staten Island, NY 10314</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-74.17775289999997, 40.6119832]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Visiting Nurse Service of New York</strong><p>7520 Astoria Blvd, East Elmhurst, NY 11370</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.89315069999998, 40.7645332]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Visiting Nurse Service of New York</strong><p>1630 E 15th St, Brooklyn, NY 11229</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.95843239999999, 40.6094476]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Visiting Nurse Service of New York</strong><p>1250 Broadway, New York, NY 100019</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.98796270000003, 40.7478473]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Visiting Nurse Service of New York</strong><p>400 Lake Ave, Staten Island, NY 10303</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-74.15207420000002, 40.6260456]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Visiting Nurse Service of New York</strong><p>13226 Avery Ave, Flushing, NY 11355</p><p><a href=\"https://www.vnsny.org/giving/volunteer/hospice-volunteer-opportunities/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.83146390000002, 40.7524574]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Isabella</strong><p>515 Audubon Avenue, New York, NY 10040</p><p><a href=\"http://www.isabella.org/Isabella/Help\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.92753429999999, 40.8545202]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Visiting Neighbors</strong><p>3 Washington Square Village #1, New York, NY 10012</p><p><a href=\"http://www.visitingneighbors.org/Activities-for-Seniors-New-York-City-NY.html\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Elderly Care</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.99797160000003, 40.7278058]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>New York Presbyterian Brooklyn Methodist Hospital</strong><p>506 6th St Brooklyn NY 11215</p><p><a href=\"http://www.nyp.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.97941759999998, 40.6679815]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>New York Presbyterian / Columbia University Hospital</strong><p>622 West 168th Street New York NY 10032</p><p><a href=\"http://www.nyp.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.9407372, 40.8411547]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>New York Presbyterian Allen Hospital</strong><p>5141 Broadway New York NY 10034</p><p><a href=\"http://www.nyp.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.91296740000001, 40.87326789999999]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>New York Presbyterian Queens</strong><p>56-45 Main Street Flushing NY 11355</p><p><a href=\"http://www.nyp.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.82514309999999, 40.7471206]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>NYU Langone Hospital - Brooklyn</strong><p>150 55th Street Brooklyn, NY 11220</p><p><a href=\"http://nyulangone.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-74.02153709999999, 40.64675809999999]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>NYU Langone Hospital Orthopedic Hospital</strong><p>301 East 17th Street New York, NY 10003</p><p><a href=\"http://nyulangone.org/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.98321349999998, 40.7342366]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Memorial Sloan Kettering Bergen</strong><p>225 Summit Ave, Montvale, NJ 07645</p><p><a href=\"https://www.mskcc.org/about/get-involved/volunteering\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-74.071437, 41.05736]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Memorial Sloan Kettering 55th Street Imaging Center</strong><p>300 E 56th St, New York, NY 10022</p><p><a href=\"https://www.mskcc.org/about/get-involved/volunteering\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.96530229999996, 40.75815269999999]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Jersey City Medical Center</strong><p>355 Grand St, Jersey City, NJ 07302</p><p><a href=\"http://www.barnabashealth.org/Jersey-City-Medical-Center/Volunteer.aspx\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Medical Services</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-74.05026570000001, 40.7163312]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>St. Mary's Church Clothing Drive</strong><p>230 Classon Ave, Brooklyn, NY 11205</p><p><a href=\"http://www.stmarysclothingdrive.org/index.php?r=site%2Fpickup\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Donation</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.9611064, 40.6926353]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>The Bowery Mission</strong><p>227 Bowery, New York, NY 10002</p><p><a href=\"https://www.bowery.org/donate/donate-goods/donate-clothes/\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Donation</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.99283500000001, 40.72196700000001]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>New York Cares</strong><p>65 broadway, New York, NY 10006</p><p><a href=\"https://www.newyorkcares.org/projects/volunteer-homeless-shelter\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Homeless Shelter</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-74.0126, 40.7073]
+                              }
+
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Hoboken Homeless Shelter</strong><p>300 Bloomfield St, Hoboken, NJ 07030</p><p><a href=\"http://hobokenshelter.org/volunteers\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Homeless Shelter</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-74.0311, 40.7403]
+                              }
+                          }, {
+                              "type": "Feature",
+                              "properties": {
+                                  "description": "<strong>Long Island Cares</strong><p>10 Davids Dr, Hauppauge, NY 11788</p><p><a href=\"https://www.licares.org/make-a-difference/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Homeless Shelter</p>",
+                                  "icon": "star"
+                              },
+                              "geometry": {
+                                  "type": "Point",
+                                  "coordinates": [-73.2572, 40.8194]
+                              }
+                        }, {
+                            "type": "Feature",
+                            "properties": {
+                                "description": "<strong>Homeless Solutions</strong><p>540 W Hanover Ave, Morristown, NJ 07960</p><p><a href=\"https://www.homelesssolutions.org/how-you-can-help/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Homeless Shelter</p>",
+                                "icon": "star"
+                            },
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-74.5212, 40.8313]
+                            }
+                        }, {
+                            "type": "Feature",
+                            "properties": {
+                                "description": "<strong>Upper East Side Donor Center</strong><p>310 East 67th Street New York, NY 10065</p><p><a href=\"http://nybloodcenter.org/donate-blood/where-to-donate-today\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Blood Donation!</p>",
+                                "icon": "star"
+                            },
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-74.2379459, 40.527916]
+                            }
+                        }, {
+                            "type": "Feature",
+                            "properties": {
+                                "description": "<strong>Grand Central Donor Center</strong><p>200 Park Avenue New York, NY 10017</p><p><a href=\"http://nybloodcenter.org/donate-blood/where-to-donate-today\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Blood Donation!</p>",
+                                "icon": "star"
+                            },
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-73.9778, 40.7524]
+                            }
+                      }, {
+                          "type": "Feature",
+                          "properties": {
+                              "description": "<strong>Port Authority Donor Center</strong><p>625 Eighth Avenue New York, NY 10018</p><p><a href=\"http://nybloodcenter.org/donate-blood/where-to-donate-today\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Blood Donation!</p>",
+                              "icon": "star"
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-73.9905, 40.7569]
+                          }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong>NYPD Manhattan North 24th Precinct</strong><p>151 West 100th Street New York, NY 10025</p><p><a href=\"http://nybloodcenter.org/donate-blood/where-to-donate-today\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Blood Donation!</p>",
+                            "icon": "star"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [-73.9671, 40.7965]
+                        }
+                      }, {
+                          "type": "Feature",
+                          "properties": {
+                              "description": "<strong>NYC Parks</strong><p>24 W 61st St, New York, NY 10023</p><p><a href=\"https://www.nycgovparks.org/opportunities/volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Parks and Rec</p>",
+                              "icon": "star"
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-73.9828, 40.7698]
+                          }
+                      }, {
+                          "type": "Feature",
+                          "properties": {
+                              "description": "<strong>The Whitney</strong><p>99 Gansevoort St, New York, NY 10014</p><p><a href=\"http://whitney.org/About/Volunteer\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Parks and Rec</p>",
+                              "icon": "star"
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-74.0088, 40.7820]
+                          }
+                      }, {
+                          "type": "Feature",
+                          "properties": {
+                              "description": "<strong>American Muesum Of Natural History</strong><p>Central Park West & 79th St, New York, NY 10024</p><p><a href=\"http://www.amnh.org/join-support/volunteer-now\" target=\"_blank\" title=\"Opens in a new window\">Link to website</a></p><p>Parks and Rec</p>",
+                              "icon": "star"
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [-73.9717, 40.7820]
+                          }
+                      }]
+                  }
+              },
+              "layout": {
+                  "icon-image": "{icon}-15",
+                  "icon-allow-overlap": true
               }
-              // Select the correct list item using the found index and add the active class
-              var listing = document.getElementById('listing-' + selectedFeatureIndex);
-              listing.classList.add('active');
-            }
           });
-          map.addControl(new mapboxgl.NavigationControl());
-          map.scrollZoom.disable();
-          </script>
+
+          // When a click event occurs on a feature in the places layer, open a popup at the
+          // location of the feature, with description HTML from its properties.
+          map.on('click', 'places', function (e) {
+              new mapboxgl.Popup()
+                  .setLngLat(e.features[0].geometry.coordinates)
+                  .setHTML(e.features[0].properties.description)
+                  .addTo(map);
+          });
+          // Change the cursor to a pointer when the mouse is over the places layer.
+          map.on('mouseenter', 'places', function () {
+              map.getCanvas().style.cursor = 'pointer';
+          });
+          // Change it back to a pointer when it leaves.
+          map.on('mouseleave', 'places', function () {
+              map.getCanvas().style.cursor = '';
+          });
+      });
+      map.addControl(new mapboxgl.NavigationControl());
+      map.scrollZoom.disable();
+      </script>
     </section>
       
       
