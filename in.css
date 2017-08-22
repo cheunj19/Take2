@@ -203,6 +203,7 @@ textarea {
 .button-block {
   display:block;
   width:50%;
+  border-radius: 8px;
 }
 
 .forgot {
