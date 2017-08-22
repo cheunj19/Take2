@@ -714,7 +714,7 @@
         var popup = new mapboxgl.Popup({ closeOnClick: false })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML('<h3>' + currentFeature.properties.title + '</h3>' +
-            '<h4>' + currentFeature.properties.description + '</h4>')
+            '<h5>' + currentFeature.properties.description + '</h5>')
           .addTo(map);
         }
 
