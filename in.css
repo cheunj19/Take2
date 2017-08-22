@@ -23,6 +23,7 @@ $br: 4px;*/
 
 html {
 	overflow-y: scroll;
+	height: 100%;
 }
 
 body {
