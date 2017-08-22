@@ -28,6 +28,7 @@ html {
 body {
   background-image: url("haters.jpg");
   background-repeat: no-repeat;
+  background-size: auto 100%;
   font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
