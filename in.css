@@ -24,12 +24,13 @@ $br: 4px;*/
 html {
 	overflow-y: scroll;
 	height: 100%;
+	width: 100%;
 }
 
 body {
   background-image: url("haters.jpg");
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: cover;
   font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
