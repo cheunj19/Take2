@@ -26,7 +26,8 @@ html {
 }
 
 body {
-  background:#78909C;
+  background-image: url("main.jpg");
+  background-repeat: no-repeat;
   font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
