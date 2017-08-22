@@ -27,7 +27,7 @@ html {
 
 body {
   background:#78909C;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .button-block{
@@ -183,7 +183,7 @@ textarea {
   border:0;
   outline:none;
   border-radius:0;
-  padding:15px 0;
+  padding:20px 40px;
   font-size:2rem;
   font-weight:$bold;
   text-transform:uppercase;
