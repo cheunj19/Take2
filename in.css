@@ -69,7 +69,7 @@ a {
 .tab-group {
   list-style:none;
   padding:0;
-  margin:0 0 40px 0;
+  margin:20px;
   &:after {
     content: "";
     display: table;
@@ -105,7 +105,7 @@ a {
 
 h1 {
   text-align:center;
-  color:$white;
+  color:white;
   font-weight:$thin;
   margin:0 0 40px;
 }
