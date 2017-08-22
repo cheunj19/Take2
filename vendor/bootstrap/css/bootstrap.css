@@ -427,6 +427,7 @@ h6, .h6 {
 
 h7, .h7 {
   font-size: .7rem; 
+  border: 4px;
 }
 
 .lead {
