@@ -186,7 +186,7 @@ textarea {
   border:0;
   outline:none;
   border-radius:0;
-  padding:13px 70px;
+  padding:12px;
   font-size:2rem;
   font-weight:$bold;
   text-transform:uppercase;
