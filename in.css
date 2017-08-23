@@ -71,7 +71,7 @@ a {
 .tab-group {
   list-style:none;
   padding:0;
-  margin:0px auto;
+  margin:0 auto;
   &:after {
     content: "";
     display: table;
@@ -217,7 +217,7 @@ textarea {
 .icon-circle .fa{
     font-size           : 25px;
     color               : #e84700;
-    margin              : 0 450px;
+    margin              : 0 440px;
     height              : 80px;
     width               : 80px;
     border-radius       : 50%;
